@@ -1,0 +1,23 @@
+server:
+  port: 8087 
+dbport: '27017'
+dbname: bootdb
+spring:
+  application:
+    name:  bootcoin-service
+  cloud:
+    config:
+      uri: localhost:8888
+logging:
+  level:
+    org:
+      springframework:
+        boot:
+          autoconfigure: ERROR
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    preferIpAddress: true
